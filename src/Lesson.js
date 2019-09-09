@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Canvas from './Canvas';
+import activities from '../src/assets/activities/activities';
+import Activity from './Activity';
 
-class Lesson extends React.Component {
+export default class Lesson extends React.Component {
   constructor() {
     super();
+    this.state = { activities };
   }
   render() {
     return (
       <div>
-        <h1>{this.props.title}</h1>
+        <Fragment>
+          <h3 style={{ textAlign: 'center' }}>
+            Marching Instructions Programming
+          </h3>
+          <div className="main">
+            <Activity
+              instruction={this.state.activities[0].instruction}
+              question={this.state.activities[0].question}
+              answer={this.state.activities[0].answer}
+            />
+            <Canvas hide={false} />
+          </div>
+        </Fragment>
       </div>
     );
   }
 }
-
-export default Lesson;
