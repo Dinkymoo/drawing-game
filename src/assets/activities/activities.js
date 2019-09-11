@@ -1,5 +1,8 @@
-import beginnerImage from '../images/draw-beginner.PNG';
-
+import intermediateImage from '../images/draw-intermediate.PNG';
+import intermediate from '../clips/draw-intermediate.mp3';
+import listenBeginner from '../images/listen-beginner.PNG';
+import advancedClip from '../clips/draw-advanced.mp3';
+import advancedImage from '../images/draw-advanced.PNG';
 const activities = [
   {
     id: 1,
@@ -22,25 +25,25 @@ const activities = [
       </li>
     </ol>
     </div>`,
-    answer: beginnerImage
+    answer: listenBeginner
   },
   {
     id: 2,
     name: 'Intermediate',
     instruction: 'Listen and Draw',
     question: `<div>
-    <audio ref=”audio_tag” src=beginnerClip controls autoPlay/>
+    <audio style="margin-left:20%" ref=”audio_tag” src=${intermediate} controls/>
     </div>`,
-    answer: '2',
-    hasCanvas: true
+    answer: intermediateImage
   },
   {
     id: 3,
     name: 'Advanced',
-    instruction: 'activity3',
-    question: '<h1>Three</h1>',
-    answer: '3',
-    hasCanvas: true
+    instruction: 'Listen and Draw',
+    question: `<div>
+    <audio ref=”audio_tag” src=${advancedClip} controls/>
+    </div>`,
+    answer: advancedImage
   }
 ];
 export default activities;

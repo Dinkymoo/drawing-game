@@ -10,8 +10,7 @@ class Canvas extends Component {
   }
 
   isPainting = false;
-  // Different stroke styles to be used for user and guest
-  userStrokeStyle = '#EE92C2';
+  userStrokeStyle = '#FFFF';
   guestStrokeStyle = '#F0C987';
   line = [];
   // v4 creates a unique id for each user. We used this since there's no auth to tell users apart
@@ -78,8 +77,8 @@ class Canvas extends Component {
 
   componentDidMount() {
     // Here we set up the properties of the canvas element.
-    this.canvas.width = 1000;
-    this.canvas.height = 800;
+    this.canvas.width = 800;
+    this.canvas.height = 600;
     this.ctx = this.canvas.getContext('2d');
     this.ctx.lineJoin = 'round';
     this.ctx.lineCap = 'round';
@@ -87,9 +86,9 @@ class Canvas extends Component {
   }
 
   render() {
-
     return (
-      <canvas hidden = {this.props.hide}
+      <canvas
+        hidden={this.props.hide}
         // We use the ref attribute to get direct access to the canvas element.
         ref={ref => (this.canvas = ref)}
         style={{ background: 'black' }}

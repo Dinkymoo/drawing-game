@@ -6,10 +6,17 @@ class Activity extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h1>{this.props.instruction}</h1>
-        <span dangerouslySetInnerHTML={{ __html: this.props.question }} />
-        <img src={this.props.answer} />
+      <div className="activity">
+        <div className="header">
+          <h1>{this.props.instruction}</h1>
+        </div>
+        <div
+          className="question"
+          dangerouslySetInnerHTML={{ __html: this.props.question }}
+        />
+        <div className="answer">
+          <img src={this.props.answer} />
+        </div>
       </div>
     );
   }

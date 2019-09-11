@@ -3,6 +3,7 @@ import './App.css';
 import Lesson from './Lesson';
 class App extends Component {
   render() {
+    
     return <Lesson />;
   }
 }
