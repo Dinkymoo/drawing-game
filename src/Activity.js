@@ -14,7 +14,7 @@ class Activity extends React.Component {
           className="question"
           dangerouslySetInnerHTML={{ __html: this.props.question }}
         />
-        <div className="answer">
+        <div className="answer" hidden={this.props.toggleAnswer}>
           <img src={this.props.answer} />
         </div>
       </div>

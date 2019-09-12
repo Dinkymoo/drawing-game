@@ -6,27 +6,44 @@ import Activity from './Activity';
 export default class Lesson extends React.Component {
   constructor() {
     super();
-    this.state = { activities, level: '1' };
+    this.state = { activities, level: '1', toggleAnswer: true };
     this.ClickHandler = this.ClickHandler.bind(this);
   }
   ClickHandler(e) {
     console.log(e.target.value);
-    this.setState({
-      level: e.target.value
-    });
-    return;
+    if (e.target.value === 'hide') {
+      this.setState(cs => {
+        return {
+          activities: cs.activities,
+          level: cs.level,
+          toggleAnswer: !cs.toggleAnswer
+        };
+      });
+    } else {
+      this.setState({
+        level: e.target.value
+      });
+      return;
+    }
   }
   render() {
     return (
       <div>
-        <button value="0" onClick={this.ClickHandler}>
+        <button className="btn-primary" value="0" onClick={this.ClickHandler}>
           Beginner
         </button>
-        <button value="1" onClick={this.ClickHandler}>
+        <button className="btn-primary" value="1" onClick={this.ClickHandler}>
           Intermediate
         </button>
-        <button value="2" onClick={this.ClickHandler}>
+        <button className="btn-primary" value="2" onClick={this.ClickHandler}>
           Advanced
+        </button>
+        <button
+          className="btn-primary"
+          value="hide"
+          onClick={this.ClickHandler}
+        >
+          Show/Hide
         </button>
         <Fragment>
           <h3 style={{ textAlign: 'center' }}>
@@ -41,6 +58,7 @@ export default class Lesson extends React.Component {
                 this.state.activities[Number(this.state.level)].question
               }
               answer={this.state.activities[Number(this.state.level)].answer}
+              toggleAnswer={this.state.toggleAnswer}
             />
             <Canvas />
           </div>
