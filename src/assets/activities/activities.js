@@ -8,7 +8,7 @@ const activities = [
     id: 1,
     name: 'Beginner',
     instruction: 'Read and Draw',
-    question: `<div>
+    question: `<br/>
     <ol>
       <li>Draw a dot in the centre of your page.</li>
       <li>
@@ -23,26 +23,21 @@ const activities = [
         Write your name in the triangle in the centre of the left-hand side
         of the page.
       </li>
-    </ol>
-    </div>`,
+    </ol>`,
     answer: listenBeginner
   },
   {
     id: 2,
     name: 'Intermediate',
     instruction: 'Listen and Draw',
-    question: `<div>
-    <audio style="margin-left:20%" ref=”audio_tag” src=${intermediate} controls/>
-    </div>`,
+    question: `<br/> <audio ref=”audio_tag” src=${intermediate} controls/>`,
     answer: intermediateImage
   },
   {
     id: 3,
     name: 'Advanced',
     instruction: 'Listen and Draw',
-    question: `<div>
-    <audio ref=”audio_tag” src=${advancedClip} controls/>
-    </div>`,
+    question: `<br/> <audio ref=”audio_tag” src=${advancedClip} controls/>`,
     answer: advancedImage
   }
 ];

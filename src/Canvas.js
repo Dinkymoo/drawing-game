@@ -91,22 +91,23 @@ class Canvas extends Component {
   render() {
     return (
       <div>
-        <button
-          style={{ textAlign: 'center', width: 800, height: 40 }}
-          className="btn btn-outline-dark"
-          onClick={this.onClear}
-        >
-          Clear Canvas
-        </button>
-        <canvas
-          // We use the ref attribute to get direct access to the canvas element.
-          ref={ref => (this.canvas = ref)}
-          style={{ background: 'black' }}
-          onMouseDown={this.onMouseDown}
-          onMouseLeave={this.endPaintEvent}
-          onMouseUp={this.endPaintEvent}
-          onMouseMove={this.onMouseMove}
-        />
+        <div className="row">
+          <button className="btn btn-outline-dark" onClick={this.onClear}>
+            Clear Canvas
+          </button>
+        </div>
+        <br />
+        <div className="row">
+          <canvas
+            // We use the ref attribute to get direct access to the canvas element.
+            ref={ref => (this.canvas = ref)}
+            style={{ background: 'black' }}
+            onMouseDown={this.onMouseDown}
+            onMouseLeave={this.endPaintEvent}
+            onMouseUp={this.endPaintEvent}
+            onMouseMove={this.onMouseMove}
+          />
+        </div>
       </div>
     );
   }

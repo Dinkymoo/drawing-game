@@ -28,28 +28,60 @@ export default class Lesson extends React.Component {
   }
   render() {
     return (
-      <div>
-        <button className="btn-primary" value="0" onClick={this.ClickHandler}>
-          Beginner
-        </button>
-        <button className="btn-primary" value="1" onClick={this.ClickHandler}>
-          Intermediate
-        </button>
-        <button className="btn-primary" value="2" onClick={this.ClickHandler}>
-          Advanced
-        </button>
-        <button
-          className="btn-primary"
-          value="hide"
-          onClick={this.ClickHandler}
-        >
-          Show/Hide
-        </button>
-        <Fragment>
-          <h3 style={{ textAlign: 'center' }}>
-            Marching Instructions Programming
-          </h3>
-          <div className="main">
+      <div
+        className="container"
+        style={{ marginLeft: '100px', textAlign: 'center' }}
+      >
+        <br />
+        <h1 style={{ textAlign: 'center' }}>
+          Marching Instructions Programming
+        </h1>
+        <br />
+        <div className="row col-xs-12">
+          <div
+            className="col-xs-5"
+            style={{ marginLeft: '0px', float: 'left' }}
+          >
+            <button
+              className="btn btn-outline-dark"
+              value="0"
+              onClick={this.ClickHandler}
+            >
+              Beginner
+            </button>
+            <button
+              style={{ marginLeft: '20px' }}
+              className="btn btn-outline-dark"
+              value="1"
+              onClick={this.ClickHandler}
+            >
+              Intermediate
+            </button>
+            <button
+              style={{ marginLeft: '20px' }}
+              className="btn btn-outline-dark"
+              value="2"
+              onClick={this.ClickHandler}
+            >
+              Advanced
+            </button>
+            <button
+              style={{ marginLeft: '20px' }}
+              className="btn btn-outline-dark"
+              value="hide"
+              onClick={this.ClickHandler}
+            >
+              Show/Hide
+            </button>
+          </div>
+        </div>
+        <br />
+
+        <div className="row col-xs-12" style={{ display: 'inline' }}>
+          <div
+            className="col-xs-6"
+            style={{ width: '500px', float: 'left', textAlign: 'left' }}
+          >
             <Activity
               instruction={
                 this.state.activities[Number(this.state.level)].instruction
@@ -60,9 +92,11 @@ export default class Lesson extends React.Component {
               answer={this.state.activities[Number(this.state.level)].answer}
               toggleAnswer={this.state.toggleAnswer}
             />
+          </div>
+          <div className="col-xs-6" style={{ width: '500px', float: 'right' }}>
             <Canvas />
           </div>
-        </Fragment>
+        </div>
       </div>
     );
   }
