@@ -6,7 +6,7 @@ import Activity from './Activity';
 export default class Lesson extends React.Component {
   constructor() {
     super();
-    this.state = { activities, level: '1', toggleAnswer: true };
+    this.state = { activities, level: '0', toggleAnswer: true };
     this.ClickHandler = this.ClickHandler.bind(this);
   }
   ClickHandler(e) {
